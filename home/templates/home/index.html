@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+{%block start %}	
+  <h1>dkhbc</h1>
+    <p>dcbdcjbncx</p>
+    {{peoples}}
+
+    <table>
+      <tr>
+        <th>S.no</th>
+        <th>name</th>
+        <th>age</th>
+        <th>Can Vote</th>
+      </tr>
+      
+      {% for people in peoples %}
+      <tr>
+        <td>{{forloop.counter}}</td>
+        <td>{{people.name}}</td>
+        <td>{{people.age}}</td>
+        <td>
+          {% if people.age >= 18 %}
+          <p>&#128509;</p>
+          
+          {%else %}
+          <p>&#128511;</p> 
+          {% endif %}
+        </td>
+      </tr>
+      {% endfor %}
+    </table>
+    <p> {{text|truncatechars:10}}</p>
+    <p>
+    {% if "cucumber" in vegetables %}
+    hai cucumber
+    {% else %}
+    nhi hai cucumber
+    {% endif %}
+    </p>
+
+    <a href="/about/">
+      about
+    </a>
+    <a href="/contact/">
+      contact
+    </a>
+{%endblock %} 
