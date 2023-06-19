@@ -10,7 +10,7 @@ from django.core.paginator import Paginator
 
 @login_required(login_url='/login/')
 def receipes(request):
-    
+    print("")
     if request.method=="POST":
 
         data= request.POST
